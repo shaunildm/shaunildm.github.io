@@ -4,7 +4,7 @@ permalink: /projects/
 title: "Data Science Post by Tags"
 author_profile: true
 header:
-  image: "/images/dsp.jpg"
+  image: "/images/pros.jpg"
 ---
 
 {% include group-by-array collection=site.posts field="tags" %}
