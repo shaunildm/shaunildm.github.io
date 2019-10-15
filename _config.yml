@@ -108,7 +108,7 @@ analytics:
 # Site Author
 author:
   name             : "Shaunil Maharaj"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/images/p1.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Data Science Portfolio"
   location         : "San Francisco Bay Area, CA"
   email            :
@@ -299,4 +299,4 @@ defaults:
       type: pages
     values:
       layout: single
-      author_profile: true    
+      author_profile: true
