@@ -5,8 +5,8 @@ tags: [data science, data analysis, machine learning, confusion matrix]
 header:
   image:
 excerpt: "Data Science, Credit Risk Modeling, Data Science"
+mathjax: "true"
 ---
-
 
 # Credit Risk Modelling Of Peer-to-Peer Lending Services
 
