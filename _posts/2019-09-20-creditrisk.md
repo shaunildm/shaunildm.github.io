@@ -28,14 +28,26 @@ Each prospective borrower applies by providing financial history, the loans purp
 Lending Club has loan data available on there [website](https://www.lendingclub.com/info/download-data.action), which requires the creation of an account to access. They have data available from 2007 to quarter 2, 2019. For the focus of our model we only want data about loans that have already either succesfully have been paid off or defaulted. Considering that the term of the loans are either 36 or 60 months, we will have to choose the data sets that are at least 5 years or older, so we will select data from 2007 to 2013. Let's begin by reading in the data.
 
 
-Python code block:
-```python
-    import numpy as np
 
-    def test_function(x,y):
-      z = np.sum()
-      return z
+```python
+# load in the data and libraries
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+%matplotlib inline
+
+# data from 2007 - 2011
+loans_07 = pd.read_csv("LoanStats3a_securev1.csv", low_memory=False, header=1)
+
+# data from 2012-2013
+loans_12 = pd.read_csv("LoanStats3b_securev1.csv", low_memory=False, header=1)
+
+# display number of rows and columns of each data set
+print(loans_07.shape)
+print(loans_12.shape)
 ```
+
 
 Here's some inline code `x+y`/
 
