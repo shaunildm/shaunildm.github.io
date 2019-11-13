@@ -540,7 +540,7 @@ plt.ylabel("Interest Rate", fontsize=15);
 ```
 
 
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/credit-risk/intgrade.jpg" alt="">
+![png]({{ "/images/credit-risk/output_18_0.png" }})
 
 
 We see that `grade`, for the most part, categorizes the `int_rate` column. We do see outliers and uneven distribution which indicates that Lending Club's grade of the loan also includes other data. The distributions are mostly evenly distributed with respect to lower grade and higher interest rate but non-evenly distributed in higher grades and lower interest rates which also indicates the complexity of the `grade` column. To make our model simpler, we will remove `grade` and keep `int_rate`.
