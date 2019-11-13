@@ -917,17 +917,17 @@ print(loans["title"].value_counts())
 print(loans["purpose"].value_counts())
 ```
 
-    Debt consolidation                        22376
-    Debt Consolidation                        15055
-    Credit card refinancing                    7451
-    Consolidation                              5096
-    debt consolidation                         4430
-                                              ...  
-    Pay property taxes/pay off credit card        1
-    Cap one                                       1
-    Home Improv - Pool                            1
-    to help family out                            1
-    Wife Immigration                              1
+    Debt consolidation                          22376
+    Debt Consolidation                          15055
+    Credit card refinancing                      7451
+    Consolidation                                5096
+    debt consolidation                           4430
+                                                ...  
+    Get rid of CCs & house                          1
+    Pat's Loan                                      1
+    Consolidating the little things in life         1
+    MyNest                                          1
+    Short term Debt Consolidation loan              1
     Name: title, Length: 58491, dtype: int64
     debt_consolidation    125492
     credit_card            46097
@@ -977,7 +977,7 @@ plt.show()
 ```
 
 
-![png](output_47_0.png)
+![png]({{ "/images/credit-risk/output_47_0.png" }})
 
 
 We can safely say that the majority of loans issued from Lending Club are from borrowers employed 10+ years so we will convert `emp_length` into categorical float values.
@@ -1267,14 +1267,7 @@ plt.legend()
 # show the plot
 plt.show()
 
-# # calculate roc curve for false positive, true positive, and threshold rates
-# fpr, tpr, tresholds = roc_curve(y_test, test_probas_lr)
-# plt.plot(fpr, tpr, linestyle='--', label='')
-# plt.title('ROC')
-# plt.xlabel('FPR')
-# plt.ylabel('TPR')
 
-# print('Linear Regression ROC-AUC score: %.2f' % roc_auc_score(y_test, test_probas_lr))
 
 
 
@@ -1285,7 +1278,7 @@ plt.show()
 
 
 
-![png](output_59_1.png)
+![png]({{ "/images/credit-risk/output_59_1.png" }})
 
 
 Logistic regression seems to be pretty accurate with a ROC-AUC-score of around 89%. Let's try some other models.
@@ -1380,7 +1373,8 @@ plt.show()
 
 
 
-![png](output_63_1.png)
+![png]({{ "/images/credit-risk/output_63_1.png" }})
+
 
 
 Random forest classification scored less than logistic regression. Let's try one more model.
@@ -1456,68 +1450,7 @@ plt.show()
 
 
 
-![png](output_68_1.png)
-
-
-## Support Vector Machine
-
-
-```python
-# from sklearn.svm import SVC
-
-# #instantiate support vector machine
-# svm = SVC(kernel = 'linear', random_state = 1)
-
-# pipe_svm = Pipeline([('scaler', sc), ('svm', svm)])
-```
-
-
-```python
-# # train model using the the transformed insantiated support vector machine model
-# pipe_svm.fit(X_train, y_train)
-```
-
-
-```python
-# # predict probabilites and keep only positive outcomes
-# test_probas_svm = pipe_svm.predict_proba(X_test)[:,1]
-
-
-# # calculate scores
-# svm_auc = roc_auc_score(y_test, test_probas_svm)
-
-# print('No Skill ROC-AUC score: %.2f' % ns_auc)
-# print('Linear Regression ROC-AUC score: %.2f' % lr_auc)
-# print('Random Forest Classifier ROC-AUC score: %.2f' % rfc_auc)
-# print('Multinomial Naive Bayes ROC-AUC score: %.2f' % nb_auc)
-# print('Support Vector Machine ROC-AUC score: %.2f' %svm_auc)
-
-
-
-# # calculate roc curves
-# svm_fpr, svm_tpr, _ = roc_curve(y_test, test_probas_svm)
-
-# # plot the roc curve for the model
-# plt.plot(ns_fpr, ns_tpr, linestyle='--', label='No Skill')
-# plt.plot(lr_fpr, lr_tpr, linestyle='--', label="Logistic Regression", color='red')
-# plt.plot(rfc_fpr, rfc_tpr, linestyle='--', label="Random Forest Classifier", color='green')
-# plt.plot(nb_fpr, nb_tpr, linestyle='--', label='Naive Bayes', color='purple')
-# plt.plot(svm_fpr, svm_tpr, linestyle='--', label='Support Vector Machine', color='orange')
-
-
-# # axis labels
-# plt.xlabel('False Positive Rate')
-# plt.ylabel('True Positive Rate')
-# # show the legend
-# plt.legend()
-# # show the plot
-# plt.show()
-```
-
-## GridSearchCV
-
-Our Logistic Regression model scored the highest, so lets use a gridsearch to select better hyperparameters.
-
+![png]({{ "/images/credit-risk/output_68_1.png" }})
 
 
 It seems multinomial naive bayes scored the lowest, most likely due to the class imbalance of `loan_status`, the high number of variables with different co
