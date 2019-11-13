@@ -8,4 +8,7 @@ excerpt: "Data Science, Missing Data, Machine Learning"
 ---
 
 # Heading 3
+
+#images
+
 <img src="{{ site.url }}{{ site.baseurl }}/assets/images/p2.jpg" alt="">
