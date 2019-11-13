@@ -917,17 +917,17 @@ print(loans["title"].value_counts())
 print(loans["purpose"].value_counts())
 ```
 
-    Debt consolidation         22376
-    Debt Consolidation         15055
-    Credit card refinancing     7451
-    Consolidation               5096
-    debt consolidation          4430
-                               ...  
-    High Hopes                     1
-    Lot Development                1
-    All My Loans                   1
-    Help Me Get Married            1
-    My DIY Wedding                 1
+    Debt consolidation                        22376
+    Debt Consolidation                        15055
+    Credit card refinancing                    7451
+    Consolidation                              5096
+    debt consolidation                         4430
+                                              ...  
+    Pay property taxes/pay off credit card        1
+    Cap one                                       1
+    Home Improv - Pool                            1
+    to help family out                            1
+    Wife Immigration                              1
     Name: title, Length: 58491, dtype: int64
     debt_consolidation    125492
     credit_card            46097
@@ -1417,7 +1417,7 @@ pipe_nb.fit(X_train, y_train)
 
 ```python
 # predict probabilites and keep only positive outcomes
-test_probas_nb = pipe_nb.predict_proba(X_ttest)[:,1]
+test_probas_nb = pipe_nb.predict_proba(X_test)[:,1]
 
 
 # calculate scores
@@ -1449,20 +1449,14 @@ plt.legend()
 plt.show()
 ```
 
-
-    ---------------------------------------------------------------------------
-
-    NameError                                 Traceback (most recent call last)
-
-    <ipython-input-42-b110b0d276a9> in <module>
-          1 # predict probabilites and keep only positive outcomes
-    ----> 2 test_probas_nb = pipe_nb.predict_proba(X_ttest)[:,1]
-          3
-          4
-          5 # calculate scores
+    No Skill ROC-AUC score: 0.50
+    Linear Regression ROC-AUC score: 0.89
+    Random Forest Classifier ROC-AUC score: 0.85
+    Multinomial Naive Bayes ROC-AUC score: 0.68
 
 
-    NameError: name 'X_ttest' is not defined
+
+![png](output_68_1.png)
 
 
 ## Support Vector Machine
