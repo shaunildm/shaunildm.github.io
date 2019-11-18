@@ -1357,13 +1357,7 @@ plt.legend()
 plt.show()
 
 
-# fpr, tpr, tresholds = roc_curve(y_test, test_probas_rfc)
-# plt.plot(fpr, tpr)
-# plt.title('ROC')
-# plt.xlabel('FPR')
-# plt.ylabel('TPR')
 
-# print('Random Forest ROC-AUC score: %.2f' % roc_auc_score(y_test, test_probas_rfc))
 
 ```
 
