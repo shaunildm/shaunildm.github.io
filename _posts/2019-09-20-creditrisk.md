@@ -5,6 +5,7 @@ tags: [Prediction Models]
 header:
   image: "/images/credit-risk/p2p.jpg"
 excerpt: "Data Science, Credit Risk, Machine Learning"
+classes: wide
 ---
 
 # Credit Risk Modelling Of Peer-to-Peer Lending Services

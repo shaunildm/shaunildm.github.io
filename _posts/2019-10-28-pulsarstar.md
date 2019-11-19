@@ -5,6 +5,7 @@ tags: [Prediction Models]
 header:
   image:
 excerpt: "Data Science, Missing Data, Machine Learning"
+classes: wide
 ---
 
 # Predicting Pulsar Stars
