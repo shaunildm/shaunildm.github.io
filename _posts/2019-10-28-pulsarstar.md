@@ -8,6 +8,7 @@ excerpt: "Data Science, Imbalanced Data, Machine Learning"
 classes: wide
 ---
 
+
 # Predicting Pulsar Stars
 
 We will be exploring supervised learning concepts by creating a model to predict the legitimacy of pulsar star candidates from the [HTRU](https://archive.ics.uci.edu/ml/datasets/HTRU2) dataset.
@@ -339,7 +340,7 @@ plt.show()
 ```
 
 
-![png]({{ "/images/pulsar-star/output_7_0.png" }})
+![png](output_7_0.png)
 
 
 As noted, the `target_class` is severely imbalanced, out of 17,898 candidates, only 16,259 negative examples to only 1,639 positive examples. This is almost a 10 to 1 ratio.
@@ -348,15 +349,14 @@ We can use a heatmap to visualize the correlations between variables in order to
 
 
 ```python
-plt.figure(figsize=(15,10))
+sns.set(rc={'figure.figsize':(15,10)})
 sns.heatmap(df.corr(), annot=True)
-
 plt.title("Correlation Between Variables")
 plt.show()
 ```
 
 
-![png]({{ "/images/pulsar-star/output_9_0.png" }})
+![png](output_9_0.png)
 
 
 ## Class Imbalance - Undersampling
@@ -520,6 +520,9 @@ print('Linear Regression ROC-AUC score: %.2f' % lr_auc)
 ns_fpr, ns_tpr, _ = roc_curve(y_test, ns_probs)
 lr_fpr, lr_tpr, _ = roc_curve(y_test, test_probas_lr)
 
+# figure size
+plt.figure(figsize=(15,10))
+
 # plot the roc curve for the model
 plt.plot(ns_fpr, ns_tpr, linestyle='--', label='No Skill', color='blue')
 plt.plot(lr_fpr, lr_tpr, linestyle='--', label="Logistic Regression", color='red')
@@ -538,7 +541,7 @@ plt.show()
 
 
 
-![png]({{ "/images/pulsar-star/output_24_1.png" }})
+![png](output_24_1.png)
 
 
 ### Random Forest Classifier
@@ -600,6 +603,9 @@ print('Random Forest Classifier ROC-AUC score: %.2f' % rfc_auc)
 # calculate roc curves
 rfc_fpr, rfc_tpr, _ = roc_curve(y_test, test_probas_rfc)
 
+# figure size
+plt.figure(figsize=(15,10))
+
 # plot the roc curve for the model
 plt.plot(ns_fpr, ns_tpr, linestyle='--', label='No Skill')
 plt.plot(lr_fpr, lr_tpr, linestyle='--', label="Logistic Regression", color='red')
@@ -613,9 +619,6 @@ plt.ylabel('True Positive Rate')
 plt.legend()
 # show the plot
 plt.show()
-
-
-
 ```
 
     No Skill ROC-AUC score: 0.50
@@ -624,7 +627,7 @@ plt.show()
 
 
 
-![png]({{ "/images/pulsar-star/output_28_1.png" }})
+![png](output_28_1.png)
 
 
 ## Multinomial Naive Bayes
@@ -661,7 +664,6 @@ pipe_nb.fit(X_train, y_train)
 # predict probabilites and keep only positive outcomes
 test_probas_nb = pipe_nb.predict_proba(X_test)[:,1]
 
-
 # calculate scores
 nb_auc = roc_auc_score(y_test, test_probas_nb)
 
@@ -670,17 +672,17 @@ print('Linear Regression ROC-AUC score: %.2f' % lr_auc)
 print('Random Forest Classifier ROC-AUC score: %.2f' % rfc_auc)
 print('Multinomial Naive Bayes ROC-AUC score: %.2f' % nb_auc)
 
-
-
 # calculate roc curves
 nb_fpr, nb_tpr, _ = roc_curve(y_test, test_probas_nb)
+
+# figure size
+plt.figure(figsize=(15,10))
 
 # plot the roc curve for the model
 plt.plot(ns_fpr, ns_tpr, linestyle='--', label='No Skill')
 plt.plot(lr_fpr, lr_tpr, linestyle='--', label="Logistic Regression", color='red')
 plt.plot(rfc_fpr, rfc_tpr, linestyle='--', label="Random Forest Classifier", color='green')
 plt.plot(nb_fpr, nb_tpr, linestyle='--', label='Naive Bayes', color='purple')
-
 
 # axis labels
 plt.xlabel('False Positive Rate')
@@ -698,7 +700,7 @@ plt.show()
 
 
 
-![png]({{ "/images/pulsar-star/output_32_1.png" }})
+![png](output_32_1.png)
 
 
 
