@@ -340,7 +340,7 @@ plt.show()
 ```
 
 
-![png](output_7_0.png)
+![png]({{ "/images/pulsar-star/output_7_0.png" }})
 
 
 As noted, the `target_class` is severely imbalanced, out of 17,898 candidates, only 16,259 negative examples to only 1,639 positive examples. This is almost a 10 to 1 ratio.
@@ -356,7 +356,7 @@ plt.show()
 ```
 
 
-![png](output_9_0.png)
+![png]({{ "/images/pulsar-star/output_9_0.png" }})
 
 
 ## Class Imbalance - Undersampling
@@ -541,7 +541,7 @@ plt.show()
 
 
 
-![png](output_24_1.png)
+![png]({{ "/images/pulsar-star/output_24_1.png" }})
 
 
 ### Random Forest Classifier
@@ -627,7 +627,7 @@ plt.show()
 
 
 
-![png](output_28_1.png)
+![png]({{ "/images/pulsar-star/output_28_1.png" }})
 
 
 ## Multinomial Naive Bayes
@@ -700,7 +700,7 @@ plt.show()
 
 
 
-![png](output_32_1.png)
+![png]({{ "/images/pulsar-star/output_32_1.png" }})
 
 
 
