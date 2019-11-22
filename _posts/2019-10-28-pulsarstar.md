@@ -3,7 +3,7 @@ title: "Pulsar Stars"
 date: 2019-10-19
 tags: [Prediction Models]
 header:
-  image:
+  image: "/images/pulsar-star/ps.jpg"
 excerpt: "Data Science, Imbalanced Data, Machine Learning"
 classes: wide
 ---
